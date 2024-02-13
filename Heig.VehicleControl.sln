@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heig.VehicleControl.WebApi", "src\Heig.VehicleControl.WebApi\Heig.VehicleControl.WebApi.csproj", "{3C332096-7009-47A4-8F44-CE694194EC03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heig.VehicleControl.Infra", "src\Heig.VehicleControl.Infra\Heig.VehicleControl.Infra.csproj", "{88A4E0FA-8B7F-43CD-97FC-6FE15A700CA5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Heig.VehicleControl.Domain", "src\Heig.VehicleControl.Domain\Heig.VehicleControl.Domain.csproj", "{8EA819CF-2CE4-47AD-A43D-14E5E44D38BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Heig.VehicleControl.Application", "src\Heig.VehicleControl.Application\Heig.VehicleControl.Application.csproj", "{8AF8E5FA-27AC-4BE9-A941-117F8D71FC3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C332096-7009-47A4-8F44-CE694194EC03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C332096-7009-47A4-8F44-CE694194EC03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C332096-7009-47A4-8F44-CE694194EC03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C332096-7009-47A4-8F44-CE694194EC03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88A4E0FA-8B7F-43CD-97FC-6FE15A700CA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88A4E0FA-8B7F-43CD-97FC-6FE15A700CA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88A4E0FA-8B7F-43CD-97FC-6FE15A700CA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88A4E0FA-8B7F-43CD-97FC-6FE15A700CA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA819CF-2CE4-47AD-A43D-14E5E44D38BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA819CF-2CE4-47AD-A43D-14E5E44D38BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA819CF-2CE4-47AD-A43D-14E5E44D38BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA819CF-2CE4-47AD-A43D-14E5E44D38BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF8E5FA-27AC-4BE9-A941-117F8D71FC3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF8E5FA-27AC-4BE9-A941-117F8D71FC3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF8E5FA-27AC-4BE9-A941-117F8D71FC3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF8E5FA-27AC-4BE9-A941-117F8D71FC3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B1E3C4B-A387-4B3C-B6A8-7EF53ECE7EA4}
+	EndGlobalSection
+EndGlobal
