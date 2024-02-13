@@ -37,14 +37,21 @@ namespace Heig.VehicleControl.Application.Services
             return await _mediator.Send(registerCommand);
         }
 
-        public Task<ValidationResult> Remove(Guid id)
+        public async Task<ValidationResult> Remove(Guid id)
         {
-            throw new NotImplementedException();
+            var removeCommand = new RemoveVehicleCommand(id);
+            return await _mediator.Send(removeCommand);
         }
 
-        public Task<ValidationResult> Update(VehicleViewModel vehicleViewModel)
+        public async Task<ValidationResult> Update(VehicleViewModel vehicleViewModel)
         {
-            throw new NotImplementedException();
+            var updateCommand = _mapper.Map<UpdateVehicleCommand>(vehicleViewModel);
+            return await _mediator.Send(updateCommand);
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

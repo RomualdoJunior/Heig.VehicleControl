@@ -3,7 +3,7 @@ using Heig.VehicleControl.Application.ViewModels;
 
 namespace Heig.VehicleControl.Application.Interfaces
 {
-    public interface IVehicleAppService
+    public interface IVehicleAppService : IDisposable
     {
         Task<IEnumerable<VehicleViewModel>> GetAll();
 

@@ -10,5 +10,11 @@ namespace Heig.VehicleControl.Domain.Commands.Vehicles.Validation
                 .NotEmpty().WithMessage("Please ensure you have entered the License Plate")
                 .Length(7).WithMessage("The License Plate must have 7 characters");
         }
+
+        protected void ValidateId()
+        {
+            RuleFor(c => c.Id)
+                .NotEqual(Guid.Empty);
+        }
     }
 }

@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Heig.VehicleControl.Infra\Heig.VehicleControl.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="HttpTests\" />
+  </ItemGroup>
+
 </Project>

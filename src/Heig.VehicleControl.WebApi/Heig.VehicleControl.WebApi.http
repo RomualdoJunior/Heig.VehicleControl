@@ -1,0 +1,24 @@
+﻿@Heig.VehicleControl.WebApi_HostAddress = https://localhost:44377
+
+GET {{Heig.VehicleControl.WebApi_HostAddress}}/vehicle
+
+###
+
+POST {{Heig.VehicleControl.WebApi_HostAddress}}/vehicle
+Content-Type: application/json
+
+  {
+    "description": "teste",
+    "licensePlate": "AAA1235"
+  }
+
+###
+
+PUT {{Heig.VehicleControl.WebApi_HostAddress}}/vehicle
+Content-Type: application/json
+
+{
+  //VehicleViewModel
+}
+
+###
