@@ -12,6 +12,6 @@ namespace Heig.VehicleControl.Application.ViewModels
         public Guid Id { get; set; }
         public Guid VehicleId { get; set; }
         public Guid ChecklistTemplateId { get; set; }
-        public List<AnswerViewModel> Answers { get; set; }
+        public List<AnswerViewModel>? Answers { get; set; }
     }
 }

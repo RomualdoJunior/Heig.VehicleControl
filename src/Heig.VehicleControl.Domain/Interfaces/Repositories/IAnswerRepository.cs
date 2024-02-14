@@ -1,8 +1,9 @@
-﻿using Heig.VehicleControl.Domain.Entities;
+﻿using Heig.VehicleControl.Domain.Common;
+using Heig.VehicleControl.Domain.Entities;
 
 namespace Heig.VehicleControl.Domain.Interfaces.Repositories
 {
-    public interface IAnswerRepository
+    public interface IAnswerRepository : IRepository<Answer>
     {
         Task<Answer> GetById(Guid id);
 

@@ -31,9 +31,9 @@ namespace Heig.VehicleControl.Application.Services
             return _mapper.Map<VehicleViewModel>(await _vehicleRepository.GetById(id));
         }
 
-        public async Task<ValidationResult> Register(VehicleViewModel vehicleViewModel)
+        public async Task<ValidationResult> Register(VehicleViewModel viewModel)
         {
-            var registerCommand = _mapper.Map<RegisterNewVehicleCommand>(vehicleViewModel);
+            var registerCommand = new RegisterNewVehicleCommand(viewModel.LicensePlate, viewModel.Description);
             return await _mediator.Send(registerCommand);
         }
 
@@ -43,9 +43,10 @@ namespace Heig.VehicleControl.Application.Services
             return await _mediator.Send(removeCommand);
         }
 
-        public async Task<ValidationResult> Update(VehicleViewModel vehicleViewModel)
+        public async Task<ValidationResult> Update(VehicleViewModel viewModel)
         {
-            var updateCommand = _mapper.Map<UpdateVehicleCommand>(vehicleViewModel);
+            var updateCommand = new UpdateVehicleCommand(viewModel.Id, viewModel.LicensePlate, viewModel.Description);
+
             return await _mediator.Send(updateCommand);
         }
 

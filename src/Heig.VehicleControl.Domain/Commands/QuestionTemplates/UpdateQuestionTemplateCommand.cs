@@ -4,8 +4,9 @@ namespace Heig.VehicleControl.Domain.Commands.QuestionTemplates
 {
     public class UpdateQuestionTemplateCommand : QuestionTemplateCommand
     {
-        public UpdateQuestionTemplateCommand(string title, string fullDescription, Guid checklistTemplateId)
+        public UpdateQuestionTemplateCommand(Guid id, string title, string fullDescription, Guid checklistTemplateId)
         {
+            Id = id;
             Title = title;
             FullDescription = fullDescription;
             ChecklistTemplateId = checklistTemplateId;

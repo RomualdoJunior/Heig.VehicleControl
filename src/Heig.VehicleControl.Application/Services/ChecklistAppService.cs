@@ -32,9 +32,9 @@ namespace Heig.VehicleControl.Application.Services
             return _mapper.Map<ChecklistViewModel>(await _ChecklistRepository.GetById(id));
         }
 
-        public async Task<ValidationResult> Register(ChecklistViewModel vehicleViewModel)
+        public async Task<ValidationResult> Register(ChecklistViewModel checklistViewModel)
         {
-            var registerCommand = new RegisterNewChecklistCommand(vehicleViewModel.VehicleId, vehicleViewModel.ChecklistTemplateId);
+            var registerCommand = new RegisterNewChecklistCommand(checklistViewModel.VehicleId, checklistViewModel.ChecklistTemplateId);
             return await _mediator.Send(registerCommand);
         }
 
@@ -44,9 +44,9 @@ namespace Heig.VehicleControl.Application.Services
             return await _mediator.Send(removeCommand);
         }
 
-        public async Task<ValidationResult> Update(ChecklistViewModel vehicleViewModel)
+        public async Task<ValidationResult> Update(ChecklistViewModel checklistViewModel)
         {
-            var updateCommand = _mapper.Map<UpdateChecklistCommand>(vehicleViewModel);
+            var updateCommand = new UpdateChecklistCommand(checklistViewModel.VehicleId, checklistViewModel.ChecklistTemplateId);
             return await _mediator.Send(updateCommand);
         }
 

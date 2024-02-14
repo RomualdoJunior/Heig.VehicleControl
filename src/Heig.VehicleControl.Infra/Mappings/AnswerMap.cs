@@ -15,8 +15,7 @@ namespace Heig.VehicleControl.Infra.Mappings
                 .IsRequired();
 
             builder.Property(c => c.AdditionalObservation)
-                .HasColumnType("varchar(4000)")
-                .IsRequired();
+                .HasColumnType("varchar(4000)");
 
             builder.Property(c => c.Ok)
                 .IsRequired();

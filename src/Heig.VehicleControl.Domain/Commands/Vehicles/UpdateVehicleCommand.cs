@@ -4,7 +4,7 @@ namespace Heig.VehicleControl.Domain.Commands.Vehicles
 {
     public class UpdateVehicleCommand : VehicleCommand
     {
-        public UpdateVehicleCommand(Guid id, string description, string licensePlate)
+        public UpdateVehicleCommand(Guid id, string licensePlate, string description)
         {
             Id = id;
             Description = description;

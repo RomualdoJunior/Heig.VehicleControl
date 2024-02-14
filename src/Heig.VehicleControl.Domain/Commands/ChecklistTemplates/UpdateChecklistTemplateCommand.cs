@@ -4,8 +4,9 @@ namespace Heig.VehicleControl.Domain.Commands.ChecklistTemplates
 {
     public class UpdateChecklistTemplateCommand : ChecklistTemplateCommand
     {
-        public UpdateChecklistTemplateCommand(string title)
+        public UpdateChecklistTemplateCommand(Guid id, string title)
         {
+            Id = id;
             Title = title;
         }
 

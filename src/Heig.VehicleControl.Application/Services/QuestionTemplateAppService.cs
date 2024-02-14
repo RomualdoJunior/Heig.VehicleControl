@@ -31,9 +31,9 @@ namespace Heig.VehicleControl.Application.Services
             return _mapper.Map<QuestionTemplateViewModel>(await _questionTemplateRepository.GetById(id));
         }
 
-        public async Task<ValidationResult> Register(QuestionTemplateViewModel vehicleViewModel)
+        public async Task<ValidationResult> Register(QuestionTemplateViewModel questionTemplateViewModel)
         {
-            var registerCommand = _mapper.Map<RegisterNewQuestionTemplateCommand>(vehicleViewModel);
+            var registerCommand = new RegisterNewQuestionTemplateCommand(questionTemplateViewModel.Title, questionTemplateViewModel.FullDescription, questionTemplateViewModel.ChecklistTemplateId);
             return await _mediator.Send(registerCommand);
         }
 
@@ -43,9 +43,9 @@ namespace Heig.VehicleControl.Application.Services
             return await _mediator.Send(removeCommand);
         }
 
-        public async Task<ValidationResult> Update(QuestionTemplateViewModel vehicleViewModel)
+        public async Task<ValidationResult> Update(QuestionTemplateViewModel questionTemplateViewModel)
         {
-            var updateCommand = _mapper.Map<UpdateQuestionTemplateCommand>(vehicleViewModel);
+            var updateCommand = new UpdateQuestionTemplateCommand(questionTemplateViewModel.Id, questionTemplateViewModel.Title, questionTemplateViewModel.FullDescription, questionTemplateViewModel.ChecklistTemplateId);
             return await _mediator.Send(updateCommand);
         }
 

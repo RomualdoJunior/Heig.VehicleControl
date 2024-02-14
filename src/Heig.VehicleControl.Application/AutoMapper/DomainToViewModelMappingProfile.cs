@@ -9,6 +9,10 @@ namespace Heig.VehicleControl.Application.AutoMapper
         public DomainToViewModelMappingProfile()
         {
             CreateMap<Vehicle, VehicleViewModel>();
+            CreateMap<Checklist, ChecklistViewModel>();
+            CreateMap<ChecklistTemplate, ChecklistTemplateViewModel>();
+            CreateMap<QuestionTemplate, QuestionTemplateViewModel>();
+            CreateMap<Answer, AnswerViewModel> ();
         }
     }
 }

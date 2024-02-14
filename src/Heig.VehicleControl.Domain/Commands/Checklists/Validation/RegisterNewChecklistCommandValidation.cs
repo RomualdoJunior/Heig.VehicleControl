@@ -13,7 +13,6 @@ namespace Heig.VehicleControl.Domain.Commands.Checklists.Validation
     {
         public RegisterNewChecklistCommandValidation()
         {
-            ValidateId();
             ValidateChecklistTemplateId();
             ValidateVehicleId();
         }

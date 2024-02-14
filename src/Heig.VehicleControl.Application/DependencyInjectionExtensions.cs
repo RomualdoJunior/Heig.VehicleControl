@@ -10,6 +10,9 @@ namespace Heig.VehicleControl.Application
         {
             // Application
             services.AddScoped<IVehicleAppService, VehicleAppService>();
+            services.AddScoped<IChecklistAppService, ChecklistAppService>();
+            services.AddScoped<IQuestionTemplateAppService, QuestionTemplateAppService>();
+            services.AddScoped<IChecklistTemplateAppService, ChecklistTemplateAppService>();
         }
     }
 }

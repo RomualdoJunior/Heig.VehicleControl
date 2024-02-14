@@ -11,7 +11,7 @@ namespace Heig.VehicleControl.Infra.Repositories
         protected readonly VehicleControlContext Db;
         protected readonly DbSet<ChecklistTemplate> DbSet;
 
-        public IUnitOfWork UnitOfWork => throw new NotImplementedException();
+        public IUnitOfWork UnitOfWork => Db;
 
         public ChecklistTemplateRepository(VehicleControlContext context)
         {
