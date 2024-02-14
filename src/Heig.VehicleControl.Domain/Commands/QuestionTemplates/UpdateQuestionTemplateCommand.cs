@@ -1,12 +1,10 @@
 ﻿using Heig.VehicleControl.Domain.Commands.QuestionTemplates.Validation;
-using System.ComponentModel.DataAnnotations;
 
 namespace Heig.VehicleControl.Domain.Commands.QuestionTemplates
-
 {
-    public class RegisterNewQuestionTemplateCommand : QuestionTemplateCommand
+    public class UpdateQuestionTemplateCommand : QuestionTemplateCommand
     {
-        public RegisterNewQuestionTemplateCommand(string title, string fullDescription, Guid checklistTemplateId)
+        public UpdateQuestionTemplateCommand(string title, string fullDescription, Guid checklistTemplateId)
         {
             Title = title;
             FullDescription = fullDescription;
@@ -15,7 +13,7 @@ namespace Heig.VehicleControl.Domain.Commands.QuestionTemplates
 
         public override bool IsValid()
         {
-            ValidationResult = new RegisterNewQuestionTemplateCommandValidation().Validate(this);
+            ValidationResult = new UpdateQuestionTemplateCommandValidation().Validate(this);
             return ValidationResult.IsValid;
         }
     }

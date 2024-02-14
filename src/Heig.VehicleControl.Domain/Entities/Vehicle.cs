@@ -15,6 +15,11 @@ namespace Heig.VehicleControl.Domain.Entities
 
         public ICollection<Checklist> Checklists { get; set; }
 
-
+        internal void Update(string licensePlate, string description)
+        {
+            UpdatedOn = DateTime.Now;
+            LicensePlate = licensePlate;
+            Description = description;
+        }
     }
 }

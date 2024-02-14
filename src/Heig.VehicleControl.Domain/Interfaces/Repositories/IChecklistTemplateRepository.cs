@@ -1,8 +1,9 @@
-﻿using Heig.VehicleControl.Domain.Entities;
+﻿using Heig.VehicleControl.Domain.Common;
+using Heig.VehicleControl.Domain.Entities;
 
 namespace Heig.VehicleControl.Domain.Interfaces.Repositories
 {
-    public interface IChecklistTemplateRepository
+    public interface IChecklistTemplateRepository : IRepository<ChecklistTemplate>
     {
         Task<ChecklistTemplate> GetById(Guid id);
 

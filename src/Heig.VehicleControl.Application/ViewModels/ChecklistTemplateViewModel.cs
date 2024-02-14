@@ -6,5 +6,7 @@ namespace Heig.VehicleControl.Application.ViewModels
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
+
+        public List<QuestionTemplateViewModel>? Questions { get; set; }
     }
 }

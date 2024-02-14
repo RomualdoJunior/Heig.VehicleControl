@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 
-namespace Heig.VehicleControl.Domain.Commands.QuestionTemplates.Validation
+namespace Heig.VehicleControl.Domain.Commands.ChecklistTemplates.Validation
 {
-    public abstract class QuestionTemplateValidation<T> : AbstractValidator<T> where T : QuestionTemplateCommand
+    public abstract class ChecklistTemplateValidation<T> : AbstractValidator<T> where T : ChecklistTemplateCommand
     {
         protected void ValidateTitle()
         {
@@ -14,12 +14,6 @@ namespace Heig.VehicleControl.Domain.Commands.QuestionTemplates.Validation
         protected void ValidateId()
         {
             RuleFor(c => c.Id)
-                .NotEqual(Guid.Empty);
-        }
-
-        protected void ValidateChecklistTemplateId()
-        {
-            RuleFor(c => c.ChecklistTemplateId)
                 .NotEqual(Guid.Empty);
         }
     }

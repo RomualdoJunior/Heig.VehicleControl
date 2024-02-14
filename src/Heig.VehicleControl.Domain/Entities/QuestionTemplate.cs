@@ -19,5 +19,12 @@ namespace Heig.VehicleControl.Domain.Entities
         {
             ChecklistTemplate = checklistTemplate;
         }
+
+        internal void Update(string title, string fullDescription)
+        {
+            UpdatedOn = DateTime.Now;
+            Title = title;
+            FullDescription = fullDescription;
+        }
     }
 }

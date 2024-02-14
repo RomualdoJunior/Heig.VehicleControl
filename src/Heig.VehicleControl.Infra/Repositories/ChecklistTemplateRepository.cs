@@ -1,4 +1,5 @@
 ﻿using Heig.VehicleControl.Domain.Entities;
+using Heig.VehicleControl.Domain.Interfaces;
 using Heig.VehicleControl.Domain.Interfaces.Repositories;
 using Heig.VehicleControl.Infra.Data;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,8 @@ namespace Heig.VehicleControl.Infra.Repositories
     {
         protected readonly VehicleControlContext Db;
         protected readonly DbSet<ChecklistTemplate> DbSet;
+
+        public IUnitOfWork UnitOfWork => throw new NotImplementedException();
 
         public ChecklistTemplateRepository(VehicleControlContext context)
         {
@@ -39,6 +42,11 @@ namespace Heig.VehicleControl.Infra.Repositories
         public void Update(ChecklistTemplate checklistTemplate)
         {
             DbSet.Update(checklistTemplate);
+        }
+
+        public void Dispose()
+        {
+            Db.Dispose();
         }
     }
 }

@@ -39,8 +39,8 @@ namespace Heig.VehicleControl.Domain.Commands.Vehicles
         {
             if (!request.IsValid()) return request.ValidationResult;
 
-            var vehicle = new Vehicle(request.Description, request.LicensePlate);
-            var existingVehicle = await _vehicleRepository.GetByLicensePlate(vehicle.LicensePlate);
+            var vehicle = await _vehicleRepository.GetById(request.Id);
+            var existingVehicle = await _vehicleRepository.GetByLicensePlate(request.LicensePlate);
 
             if (existingVehicle != null && existingVehicle.Id != vehicle.Id)
             {
@@ -50,6 +50,7 @@ namespace Heig.VehicleControl.Domain.Commands.Vehicles
                     return ValidationResult;
                 }
             }
+            vehicle.Update(request.LicensePlate, request.Description);
 
             _vehicleRepository.Update(vehicle);
 
@@ -64,7 +65,7 @@ namespace Heig.VehicleControl.Domain.Commands.Vehicles
 
             if (vehicle is null)
             {
-                AddError("The vehicle doesn't exists.");
+                AddError("This vehicle doesn't exists.");
                 return ValidationResult;
             }
 
