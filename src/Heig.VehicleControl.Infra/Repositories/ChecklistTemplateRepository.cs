@@ -26,7 +26,7 @@ namespace Heig.VehicleControl.Infra.Repositories
 
         public async Task<ChecklistTemplate> GetById(Guid id)
         {
-            return await DbSet.FindAsync(id);
+            return await DbSet.Include(q => q.Questions).SingleAsync(a => a.Id.Equals(id));
         }
 
         public void Add(ChecklistTemplate checklistTemplate)

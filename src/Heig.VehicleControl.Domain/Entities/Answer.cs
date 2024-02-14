@@ -3,7 +3,12 @@
 namespace Heig.VehicleControl.Domain.Entities
 {
     public class Answer : BaseEntity
-    {        
+    {
+        public Answer(string title)
+        {
+            Title = title;
+        }
+
         public string Title { get; private set; }
         public string AdditionalObservation { get; private set; }
         public bool Ok { get; private set; }

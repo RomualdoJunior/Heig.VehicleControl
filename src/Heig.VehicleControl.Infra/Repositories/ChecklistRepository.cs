@@ -1,4 +1,5 @@
 ﻿using Heig.VehicleControl.Domain.Entities;
+using Heig.VehicleControl.Domain.Interfaces;
 using Heig.VehicleControl.Domain.Interfaces.Repositories;
 using Heig.VehicleControl.Infra.Data;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,8 @@ namespace Heig.VehicleControl.Infra.Repositories
     {
         protected readonly VehicleControlContext Db;
         protected readonly DbSet<Checklist> DbSet;
+
+        public IUnitOfWork UnitOfWork => throw new NotImplementedException();
 
         public ChecklistRepository(VehicleControlContext context)
         {
@@ -23,7 +26,7 @@ namespace Heig.VehicleControl.Infra.Repositories
 
         public async Task<Checklist> GetById(Guid id)
         {
-            return await DbSet.FindAsync(id);
+            return await DbSet.Include(c => c.Answers).SingleOrDefaultAsync(s => s.Id.Equals(id));
         }
 
         public void Add(Checklist checklist)
@@ -39,6 +42,11 @@ namespace Heig.VehicleControl.Infra.Repositories
         public void Update(Checklist checklist)
         {
             DbSet.Update(checklist);
+        }
+
+        public void Dispose()
+        {
+            Db.Dispose();
         }
     }
 }
