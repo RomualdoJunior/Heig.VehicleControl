@@ -8,11 +8,13 @@ namespace Heig.VehicleControl.Domain.Entities
     {
         protected Checklist()
         {
+            Status = ChecklistStatus.Created;
             Answers = new List<Answer> { };
         }
 
         public Checklist(Vehicle vehicle, ChecklistTemplate originalChecklistTemplate)
         {
+            Status = ChecklistStatus.Created;
             Vehicle = vehicle;
             OriginalChecklistTemplate = originalChecklistTemplate;
         }
