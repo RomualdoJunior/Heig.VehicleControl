@@ -16,21 +16,21 @@ dotnet ef migrations script --context VehicleControlContext --project ../Heig.Ve
 
 
 # Technologies implemented:
-ASP.NET 8.0
-ASP.NET WebApi Core with JWT Bearer Authentication
-ASP.NET Identity Core ([doc](https://learn.microsoft.com/pt-br/aspnet/core/security/authentication/identity?view=aspnetcore-8.0))
-Entity Framework Core 8.0
-.NET Core Native DI
-AutoMapper
-FluentValidation
-MediatR
-Swagger UI with JWT support
+- ASP.NET 8.0
+- ASP.NET WebApi Core with JWT Bearer Authentication
+- ASP.NET Identity Core ([doc](https://learn.microsoft.com/pt-br/aspnet/core/security/authentication/identity?view=aspnetcore-8.0))
+- Entity Framework Core 8.0
+- .NET Core Native DI
+- AutoMapper
+- FluentValidation
+- MediatR
+- Swagger UI with JWT support
 
 # Architecture:
-Full architecture with responsibility separation concerns, SOLID and Clean Code
-Domain Driven Design (Layers and Domain Model Pattern)
-Domain Notification
-Domain Validations
-CQRS (Imediate Consistency)
-Unit of Work
-Repository
+- Full architecture with responsibility separation concerns, SOLID and Clean Code
+- Domain Driven Design (Layers and Domain Model Pattern)
+- Domain Notification
+- Domain Validations
+- CQRS (Imediate Consistency)
+- Unit of Work
+- Repository
