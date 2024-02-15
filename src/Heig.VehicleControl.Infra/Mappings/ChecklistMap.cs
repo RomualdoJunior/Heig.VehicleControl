@@ -1,7 +1,6 @@
 ﻿using Heig.VehicleControl.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Reflection.Emit;
 
 namespace Heig.VehicleControl.Infra.Mappings
 {
