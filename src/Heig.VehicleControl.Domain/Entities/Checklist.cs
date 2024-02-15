@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using Heig.VehicleControl.Domain.Common;
+using Heig.VehicleControl.Domain.Entities.Enums;
 
 namespace Heig.VehicleControl.Domain.Entities
 {
@@ -16,6 +17,8 @@ namespace Heig.VehicleControl.Domain.Entities
             OriginalChecklistTemplate = originalChecklistTemplate;
         }
 
+        public ChecklistStatus Status { get; set; }
+        public Guid OwnerUserId { get; set; }
         public Vehicle Vehicle { get; private set; }
         public ChecklistTemplate OriginalChecklistTemplate { get; private set; }
         public List<Answer> Answers { get; private set; }

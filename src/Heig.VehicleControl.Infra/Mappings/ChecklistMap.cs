@@ -10,6 +10,8 @@ namespace Heig.VehicleControl.Infra.Mappings
         public void Configure(EntityTypeBuilder<Checklist> builder)
         {
             builder.Property(c => c.Id).HasColumnName("Id");
+            builder.Property(c => c.OwnerUserId).HasColumnName("OwnerUserId").IsRequired();
+            builder.Property(c => c.Status).HasConversion<int>().IsRequired();
 
             builder.HasOne(e => e.Vehicle)
                    .WithMany(c => c.Checklists);

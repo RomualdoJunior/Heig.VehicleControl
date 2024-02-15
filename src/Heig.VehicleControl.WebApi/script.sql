@@ -44,6 +44,8 @@ GO
 
 CREATE TABLE [Checklists] (
     [Id] uniqueidentifier NOT NULL,
+    [Status] int NOT NULL,
+    [OwnerUserId] uniqueidentifier NOT NULL,
     [VehicleId] uniqueidentifier NOT NULL,
     [OriginalChecklistTemplateId] uniqueidentifier NOT NULL,
     [CreatedOn] datetime2 NULL,
@@ -57,7 +59,7 @@ GO
 CREATE TABLE [Answers] (
     [Id] uniqueidentifier NOT NULL,
     [Title] varchar(100) NOT NULL,
-    [AdditionalObservation] varchar(4000) NOT NULL,
+    [AdditionalObservation] varchar(4000) NULL,
     [Ok] bit NOT NULL,
     [ChecklistId] uniqueidentifier NOT NULL,
     [CreatedOn] datetime2 NULL,
@@ -80,7 +82,7 @@ CREATE INDEX [IX_QuestionTemplates_ChecklistTemplateId] ON [QuestionTemplates] (
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20240213160243_Initial', N'8.0.1');
+VALUES (N'20240214235937_Initial', N'8.0.1');
 GO
 
 COMMIT;

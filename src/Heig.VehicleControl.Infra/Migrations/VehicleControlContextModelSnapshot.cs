@@ -30,7 +30,6 @@ namespace Heig.VehicleControl.Infra.Migrations
                         .HasColumnName("Id");
 
                     b.Property<string>("AdditionalObservation")
-                        .IsRequired()
                         .HasColumnType("varchar(4000)");
 
                     b.Property<Guid>("ChecklistId")
@@ -68,6 +67,13 @@ namespace Heig.VehicleControl.Infra.Migrations
 
                     b.Property<Guid>("OriginalChecklistTemplateId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("OwnerUserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("OwnerUserId");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdatedOn")
                         .HasColumnType("datetime2");

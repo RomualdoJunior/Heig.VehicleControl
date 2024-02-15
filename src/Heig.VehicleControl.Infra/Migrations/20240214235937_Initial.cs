@@ -67,6 +67,8 @@ namespace Heig.VehicleControl.Infra.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
+                    OwnerUserId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     VehicleId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     OriginalChecklistTemplateId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -95,7 +97,7 @@ namespace Heig.VehicleControl.Infra.Migrations
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     Title = table.Column<string>(type: "varchar(100)", nullable: false),
-                    AdditionalObservation = table.Column<string>(type: "varchar(4000)", nullable: false),
+                    AdditionalObservation = table.Column<string>(type: "varchar(4000)", nullable: true),
                     Ok = table.Column<bool>(type: "bit", nullable: false),
                     ChecklistId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CreatedOn = table.Column<DateTime>(type: "datetime2", nullable: true),
