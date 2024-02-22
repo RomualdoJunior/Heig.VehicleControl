@@ -15,8 +15,4 @@
     <ProjectReference Include="..\Heig.VehicleControl.Domain\Heig.VehicleControl.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-
 </Project>

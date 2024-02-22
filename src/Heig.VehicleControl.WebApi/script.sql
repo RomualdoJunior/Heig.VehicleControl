@@ -13,6 +13,7 @@ GO
 
 CREATE TABLE [ChecklistTemplates] (
     [Id] uniqueidentifier NOT NULL,
+    [Number] int NOT NULL IDENTITY,
     [Title] varchar(255) NOT NULL,
     [CreatedOn] datetime2 NULL,
     [UpdatedOn] datetime2 NULL,
@@ -82,7 +83,7 @@ CREATE INDEX [IX_QuestionTemplates_ChecklistTemplateId] ON [QuestionTemplates] (
 GO
 
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20240214235937_Initial', N'8.0.1');
+VALUES (N'20240222232104_Initial', N'8.0.1');
 GO
 
 COMMIT;

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Heig.VehicleControl.Infra.Migrations
 {
     [DbContext(typeof(VehicleControlContext))]
-    [Migration("20240214235937_Initial")]
+    [Migration("20240222232104_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -102,6 +102,13 @@ namespace Heig.VehicleControl.Infra.Migrations
 
                     b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("Number")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Number");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Number"));
 
                     b.Property<string>("Title")
                         .IsRequired()

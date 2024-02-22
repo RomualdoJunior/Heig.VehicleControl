@@ -9,6 +9,7 @@ namespace Heig.VehicleControl.Domain.Entities
             Title = title;
         }
 
+        public int Number { get; set; }
         public string Title { get; set; }
         public List<QuestionTemplate> Questions { get; private set; }
 

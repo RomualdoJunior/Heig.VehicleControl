@@ -100,6 +100,13 @@ namespace Heig.VehicleControl.Infra.Migrations
                     b.Property<DateTime?>("CreatedOn")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("Number")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("Number");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Number"));
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("varchar(255)");
