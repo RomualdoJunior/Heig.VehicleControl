@@ -7,11 +7,10 @@ The latest SDK and tools can be downloaded from https://dot.net/core.
 
 You will need a instance of SQL Server acessible from your machine.
 
-Inside Visual Studio setup WebApi as your main project 
-and
-Run this to create the script from database
+Inside Visual Studio setup WebApi as your main project and Run this to create the script from database
 
 dotnet ef migrations add Initial --context VehicleControlContext --project ../Heig.VehicleControl.Infra/Heig.VehicleControl.Infra.csproj
+
 dotnet ef migrations script --context VehicleControlContext --project ../Heig.VehicleControl.Infra/Heig.VehicleControl.Infra.csproj -o script.sql
 
 
