@@ -9,6 +9,7 @@ namespace Heig.VehicleControl.Domain.Common
             Id = Guid.NewGuid();
             CreatedOn = DateTime.Now;
             UpdatedOn = null;
+            ValidationResult = new ValidationResult();
         }
 
         public Guid Id { get; protected set; }
